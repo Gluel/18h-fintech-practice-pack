@@ -1,0 +1,32 @@
+{
+  "classification": "internal",
+  "checked_on": "2026-09-10",
+  "policy_url": "https://www.fsc.go.kr/ut020104",
+  "reuse_scope": "본문 전체·첨부·사진은 배포하지 않음. 출처를 표시한 짧은 교육용 인용이며 전문 확보를 뜻하지 않음. 확장 재배포 시 별도 권리 확인.",
+  "items": [
+    {
+      "id": "87571",
+      "url": "https://www.fsc.go.kr/no010101/87571",
+      "published_on": "2026-08-20",
+      "body_status": "EXCERPT_ONLY",
+      "excerpt_id": "87571-p1",
+      "location": "본문 상단 부제의 국회 통과 안내",
+      "excerpt": "「통신사기피해환급법」 개정안 국회 본회의 통과 (‘26.8.20.)",
+      "normalization": "HTML span 사이 띄어쓰기 정규화",
+      "summary": "2026년 8월 20일, 관련 법률 개정안의 국회 본회의 통과를 알린 자료입니다.",
+      "limit": "이 발췌만으로 실제 시행일·개별 사건 적용 여부를 판단하지 않습니다."
+    },
+    {
+      "id": "87566",
+      "url": "https://www.fsc.go.kr/no010101/87566",
+      "published_on": "2026-08-20",
+      "body_status": "EXCERPT_ONLY",
+      "excerpt_id": "87566-p3-part",
+      "location": "본문 수해 피해 가계 지원 항목 중 앞부분 발췌",
+      "excerpt": "수해 피해 가계에는 ①긴급생활안정자금 지원, ②기존 대출 만기연장, 상환유예",
+      "normalization": "HTML span 사이 띄어쓰기 정규화, 지원항목 중 일부만 발췌",
+      "summary": "수해 피해 가계에 대한 지원 항목으로 생활안정자금과 대출 만기연장·상환유예를 안내합니다.",
+      "limit": "지원 대상의 세부 자격·금액·신청기관·전체 지원 항목은 이 발췌에 없습니다."
+    }
+  ]
+}

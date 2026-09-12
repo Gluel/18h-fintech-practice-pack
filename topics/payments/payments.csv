@@ -1,0 +1,4 @@
+id,status,amount_krw
+P01,paid,10000
+P02,unpaid,20000
+P03,refunded,10000

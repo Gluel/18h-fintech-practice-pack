@@ -1,0 +1,63 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>가이드 ⑤ 막혔을 때</title><style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#eef1f5;color:#202b35;
+  font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic","맑은 고딕",system-ui,sans-serif;
+  line-height:1.6;word-break:keep-all;overflow-wrap:anywhere}
+.sheet{max-width:1000px;margin:0 auto 22px;background:#fff;padding:38px 44px 44px;
+  box-shadow:0 1px 4px rgba(20,40,60,.10)}
+h1{font-size:34px;margin:0 0 6px;letter-spacing:-.6px}
+h2{font-size:25px;margin:34px 0 12px;padding-bottom:8px;border-bottom:3px solid #125eb0;color:#0d3f78}
+h3{font-size:20px;margin:22px 0 8px;color:#125eb0}
+p,li{font-size:17px}
+.lede{font-size:18px;color:#5f6e7d;margin:0 0 18px}
+.meta{font-size:14px;color:#5f6e7d;border-top:1px solid #c9d4de;margin-top:34px;padding-top:12px}
+table{width:100%;border-collapse:collapse;margin:12px 0 18px;font-size:16px}
+th{background:#0d3f78;color:#fff;text-align:left;padding:11px 13px;font-size:15px;font-weight:700}
+td{border-bottom:1px solid #c9d4de;padding:11px 13px;vertical-align:top}
+tr:nth-child(even) td{background:#f1f6fa}
+.note{background:#fdf6e8;border-left:6px solid #b1791b;padding:13px 17px;margin:14px 0;font-size:16px}
+.warn{background:#fdf0f2;border-left:6px solid #b83e50;padding:13px 17px;margin:14px 0;font-size:16px}
+.ok{background:#edf6f1;border-left:6px solid #18805b;padding:13px 17px;margin:14px 0;font-size:16px}
+.copy{background:#0f2740;color:#dbe7f3;border-radius:10px;padding:16px 18px;margin:12px 0;
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:15px;line-height:1.62;white-space:pre-wrap}
+.copy b{color:#ffd479;font-weight:700}
+.chip{display:inline-block;padding:4px 12px;border-radius:14px;font-size:14px;font-weight:700;
+  background:#f1f6fa;color:#125eb0;border:1.5px solid #125eb0;margin:0 6px 6px 0}
+.chip.g{background:#edf6f1;color:#18805b;border-color:#18805b}
+.chip.r{background:#fdf0f2;color:#b83e50;border-color:#b83e50}
+.chip.a{background:#fdf6e8;color:#b1791b;border-color:#b1791b}
+.step{border:1.5px solid #c9d4de;border-radius:12px;margin:16px 0;overflow:hidden;page-break-inside:avoid}
+.step>.head{display:flex;gap:13px;align-items:center;background:#f1f6fa;padding:12px 16px;
+  border-bottom:1.5px solid #c9d4de}
+.step>.head .no{flex:none;width:32px;height:32px;border-radius:50%;background:#125eb0;color:#fff;
+  font-weight:800;display:flex;align-items:center;justify-content:center;font-size:16px}
+.step>.head b{font-size:19px;color:#0d3f78}
+.cols{display:grid;grid-template-columns:0.92fr 1.55fr 0.92fr;gap:0}
+.cols>div{padding:14px 15px;border-right:1px solid #c9d4de}
+.cols>div:last-child{border-right:0}
+.cols .t{font-size:13px;font-weight:800;letter-spacing:.4px;margin-bottom:7px}
+.cols .do .t{color:#125eb0} .cols .see .t{color:#18805b} .cols .fix .t{color:#b83e50}
+.cols p{font-size:16px;margin:0 0 7px}
+.shot{border:1px solid #c9d4de;border-radius:8px;background:#fff;padding:6px;margin-top:4px}
+.shot svg{display:block;width:100%;height:auto}
+.shot .cap{font-size:12px;color:#5f6e7d;margin-top:5px;text-align:center}
+.slot{border:2px dashed #b1791b;border-radius:8px;background:#fdf6e8;padding:12px;margin-top:8px;
+  font-size:13px;color:#b1791b;text-align:center;font-weight:700}
+.grid9{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}
+.grid9 .cell{border:1.5px solid #c9d4de;border-radius:10px;min-height:118px;padding:11px 13px;page-break-inside:avoid}
+.grid9 .cell .k{font-size:13px;font-weight:800;color:#125eb0;margin-bottom:6px}
+.grid9 .cell .v{font-size:16px}
+.grid9 .cell.blank .v{color:#b7c2cd}
+.grid9 .cell .when{float:right;font-size:11px;color:#5f6e7d;font-weight:700}
+.write{border-bottom:1.6px dotted #aab6c2;min-height:26px;margin:5px 0}
+.toc a{display:block;padding:11px 15px;margin:8px 0;border:1.5px solid #c9d4de;border-radius:10px;
+  text-decoration:none;color:#202b35;font-size:17px}
+.toc a b{color:#0d3f78}
+.toc a span{color:#5f6e7d;font-size:15px}
+@media print{
+  html,body{background:#fff}
+  .sheet{box-shadow:none;max-width:none;padding:0;margin:0}
+  h2{page-break-after:avoid}
+  @page{size:A4;margin:14mm}
+}
+</style></head><body><div class="sheet"><h1>가이드 ⑤ 막혔을 때</h1><p class="lede">자주 나는 일곱 가지와 푸는 순서.</p><div class="ok"><b>막히는 것은 정상입니다.</b> 실습 한 칸은 15~20분이므로 <b>30분을 기다리지 않습니다.</b> 같은 오류로 한 번 더 시도한 뒤 안 되면 참고 결과물로 옮기고, 못 한 것을 <b>기록</b>하세요. 기록도 결과물입니다.</div><div class="step"><div class="head"><div class="no">1</div><b>로그인이 풀렸다 (재부팅 후)</b></div><div class="cols"><div class="do"><div class="t">① 할 일</div><p>Claude 앱을 열고 본인 이메일로 다시 로그인</p></div><div class="see"><div class="t">② 성공하면 보이는 화면</div><p style="color:#5f6e7d;font-size:14px">이 PC 는 끄면 로그인 기록이 지워집니다.</p><p style="font-size:15px">GitHub 은 새 기기라 <b>이메일 확인 코드</b>가 옵니다 (1시간 유효)</p><p style="font-size:15px">휴대폰에서 메일을 여세요. <b>스팸함</b>도 확인</p><p style="font-size:15px">다른 사람이 대신 눌러 주면 본인 기기 인증이 실패합니다</p></div><div class="fix"><div class="t">③ 안 되면</div><p><b>같은 오류로 한 번 더 시도</b>해 보고, 그래도 안 되면 다음 <b>공통 확인 시점</b>에 참고 결과물로 옮겨 갑니다. 못 한 것은 기록으로 남깁니다. 계정·설치는 운영 매니저, 데이터·구현은 강사에게 손을 들어 주세요.</p></div></div></div><div class="step"><div class="head"><div class="no">2</div><b>폴더를 못 찾겠다</b></div><div class="cols"><div class="do"><div class="t">① 할 일</div><p>바탕화면이 아니라 <b>다운로드</b> 폴더에 있을 수 있습니다</p></div><div class="see"><div class="t">② 성공하면 보이는 화면</div><p style="color:#5f6e7d;font-size:14px">가장 많이 시간을 먹는 일입니다.</p><p style="font-size:15px">탐색기 주소창에 <b>%USERPROFILE%\Downloads</b> 를 붙여 넣어 보세요</p><p style="font-size:15px">그래도 없으면 패들렛에서 ZIP 을 다시 받습니다</p></div><div class="fix"><div class="t">③ 안 되면</div><p><b>같은 오류로 한 번 더 시도</b>해 보고, 그래도 안 되면 다음 <b>공통 확인 시점</b>에 참고 결과물로 옮겨 갑니다. 못 한 것은 기록으로 남깁니다. 계정·설치는 운영 매니저, 데이터·구현은 강사에게 손을 들어 주세요.</p></div></div></div><div class="step"><div class="head"><div class="no">3</div><b>ZIP 안에서 바로 열어버렸다</b></div><div class="cols"><div class="do"><div class="t">① 할 일</div><p>ZIP 을 오른쪽 클릭 → <b>모두 압축 풀기</b></p></div><div class="see"><div class="t">② 성공하면 보이는 화면</div><p style="color:#5f6e7d;font-size:14px">수정이 저장되지 않습니다.</p><p style="font-size:15px">만들어진 <b>폴더</b>를 앱에서 다시 엽니다</p><p style="font-size:15px">폴더 아이콘인지(압축 아이콘이 아닌지) 확인</p></div><div class="fix"><div class="t">③ 안 되면</div><p><b>같은 오류로 한 번 더 시도</b>해 보고, 그래도 안 되면 다음 <b>공통 확인 시점</b>에 참고 결과물로 옮겨 갑니다. 못 한 것은 기록으로 남깁니다. 계정·설치는 운영 매니저, 데이터·구현은 강사에게 손을 들어 주세요.</p></div></div></div><div class="step"><div class="head"><div class="no">4</div><b>화면이 안 바뀐다</b></div><div class="cols"><div class="do"><div class="t">① 할 일</div><p>브라우저에서 <b>F5</b> (새로고침)</p></div><div class="see"><div class="t">② 성공하면 보이는 화면</div><p style="color:#5f6e7d;font-size:14px">파일은 바뀌었는데 화면이 그대로인 경우입니다.</p><p style="font-size:15px">그래도 그대로면 <b>Ctrl+F5</b></p><p style="font-size:15px">열어 둔 파일이 내가 고친 그 파일이 맞는지 주소를 확인</p></div><div class="fix"><div class="t">③ 안 되면</div><p><b>같은 오류로 한 번 더 시도</b>해 보고, 그래도 안 되면 다음 <b>공통 확인 시점</b>에 참고 결과물로 옮겨 갑니다. 못 한 것은 기록으로 남깁니다. 계정·설치는 운영 매니저, 데이터·구현은 강사에게 손을 들어 주세요.</p></div></div></div><div class="step"><div class="head"><div class="no">5</div><b>AI 가 여러 파일을 한꺼번에 바꿨다</b></div><div class="cols"><div class="do"><div class="t">① 할 일</div><p>다음 요청부터 <b>「바꿀 파일과 범위」를 지정</b>합니다</p></div><div class="see"><div class="t">② 성공하면 보이는 화면</div><p style="color:#5f6e7d;font-size:14px">무엇 때문에 달라졌는지 알 수 없게 됩니다.</p><p style="font-size:15px">예: 「index.html 의 제목만 바꿔줘. 다른 파일은 건드리지 마」</p><p style="font-size:15px">이미 바뀌었으면 GitHub 의 마지막 업로드본을 Download ZIP 으로 되돌립니다</p></div><div class="fix"><div class="t">③ 안 되면</div><p><b>같은 오류로 한 번 더 시도</b>해 보고, 그래도 안 되면 다음 <b>공통 확인 시점</b>에 참고 결과물로 옮겨 갑니다. 못 한 것은 기록으로 남깁니다. 계정·설치는 운영 매니저, 데이터·구현은 강사에게 손을 들어 주세요.</p></div></div></div><div class="step"><div class="head"><div class="no">6</div><b>없는 내용을 지어냈다</b></div><div class="cols"><div class="do"><div class="t">① 할 일</div><p>데이터가 없는 기간에 숫자가 있으면 <b>의심</b>합니다</p></div><div class="see"><div class="t">② 성공하면 보이는 화면</div><p style="color:#5f6e7d;font-size:14px">가장 조심할 일입니다.</p><p style="font-size:15px">원본 파일과 화면 값을 <b>1개</b> 대조합니다</p><p style="font-size:15px">「이 값이 어느 파일 몇 번째 줄에서 왔는지 알려줘」라고 물어봅니다</p><p style="font-size:15px">지어낸 것이면 <b>「미공개」로 표시하고 채우지 마</b> 라고 다시 요청</p></div><div class="fix"><div class="t">③ 안 되면</div><p><b>같은 오류로 한 번 더 시도</b>해 보고, 그래도 안 되면 다음 <b>공통 확인 시점</b>에 참고 결과물로 옮겨 갑니다. 못 한 것은 기록으로 남깁니다. 계정·설치는 운영 매니저, 데이터·구현은 강사에게 손을 들어 주세요.</p></div></div></div><div class="step"><div class="head"><div class="no">7</div><b>차트가 빈 화면이다</b></div><div class="cols"><div class="do"><div class="t">① 할 일</div><p>인터넷에서 차트 라이브러리를 불러오려 한 경우 → <b>「외부 라이브러리·CDN 없이 SVG 로」</b></p></div><div class="see"><div class="t">② 성공하면 보이는 화면</div><p style="color:#5f6e7d;font-size:14px">거의 두 가지 중 하나입니다.</p><p style="font-size:15px">HTML 에서 fetch 로 CSV 를 읽은 경우 → <b>data.js 로 감싸서 &lt;script src&gt; 로</b></p><p style="font-size:15px">한글이 깨지면 → <b>「cp949 로 읽어」</b> 를 덧붙입니다</p></div><div class="fix"><div class="t">③ 안 되면</div><p><b>같은 오류로 한 번 더 시도</b>해 보고, 그래도 안 되면 다음 <b>공통 확인 시점</b>에 참고 결과물로 옮겨 갑니다. 못 한 것은 기록으로 남깁니다. 계정·설치는 운영 매니저, 데이터·구현은 강사에게 손을 들어 주세요.</p></div></div></div><h2>그래도 안 될 때</h2><table><tr><th style="width:30%">누구에게</th><th>무엇을</th></tr><tr><td><b>운영 매니저</b></td><td>계정 · 로그인 · 설치 문제</td></tr><tr><td><b>강사</b></td><td>데이터 · 구현 · 화면 문제 (손 들어 주세요)</td></tr><tr><td><b>단톡방</b></td><td>쉬는 시간과 수업 뒤에도 남겨 주시면 답합니다</td></tr></table><div class="warn">개인정보·계정·비밀번호·API 키는 단톡방이나 메모에 적지 않습니다.</div><div class="meta">부산대 미래시민교육원 핀테크 AI 18H · 주식회사 코스타트 · 2026-09-11 · 실습 PC = Windows + Claude 데스크톱 앱 기준 · 화면 도식은 <b>재현 도식</b>이며 9/12 실습 PC 캡처로 교체합니다</div></div></body></html>

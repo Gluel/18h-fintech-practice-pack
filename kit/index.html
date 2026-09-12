@@ -1,0 +1,63 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>실습 키트 v27 — 전체 지도</title><style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#eef1f5;color:#202b35;
+  font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic","맑은 고딕",system-ui,sans-serif;
+  line-height:1.6;word-break:keep-all;overflow-wrap:anywhere}
+.sheet{max-width:1000px;margin:0 auto 22px;background:#fff;padding:38px 44px 44px;
+  box-shadow:0 1px 4px rgba(20,40,60,.10)}
+h1{font-size:34px;margin:0 0 6px;letter-spacing:-.6px}
+h2{font-size:25px;margin:34px 0 12px;padding-bottom:8px;border-bottom:3px solid #125eb0;color:#0d3f78}
+h3{font-size:20px;margin:22px 0 8px;color:#125eb0}
+p,li{font-size:17px}
+.lede{font-size:18px;color:#5f6e7d;margin:0 0 18px}
+.meta{font-size:14px;color:#5f6e7d;border-top:1px solid #c9d4de;margin-top:34px;padding-top:12px}
+table{width:100%;border-collapse:collapse;margin:12px 0 18px;font-size:16px}
+th{background:#0d3f78;color:#fff;text-align:left;padding:11px 13px;font-size:15px;font-weight:700}
+td{border-bottom:1px solid #c9d4de;padding:11px 13px;vertical-align:top}
+tr:nth-child(even) td{background:#f1f6fa}
+.note{background:#fdf6e8;border-left:6px solid #b1791b;padding:13px 17px;margin:14px 0;font-size:16px}
+.warn{background:#fdf0f2;border-left:6px solid #b83e50;padding:13px 17px;margin:14px 0;font-size:16px}
+.ok{background:#edf6f1;border-left:6px solid #18805b;padding:13px 17px;margin:14px 0;font-size:16px}
+.copy{background:#0f2740;color:#dbe7f3;border-radius:10px;padding:16px 18px;margin:12px 0;
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:15px;line-height:1.62;white-space:pre-wrap}
+.copy b{color:#ffd479;font-weight:700}
+.chip{display:inline-block;padding:4px 12px;border-radius:14px;font-size:14px;font-weight:700;
+  background:#f1f6fa;color:#125eb0;border:1.5px solid #125eb0;margin:0 6px 6px 0}
+.chip.g{background:#edf6f1;color:#18805b;border-color:#18805b}
+.chip.r{background:#fdf0f2;color:#b83e50;border-color:#b83e50}
+.chip.a{background:#fdf6e8;color:#b1791b;border-color:#b1791b}
+.step{border:1.5px solid #c9d4de;border-radius:12px;margin:16px 0;overflow:hidden;page-break-inside:avoid}
+.step>.head{display:flex;gap:13px;align-items:center;background:#f1f6fa;padding:12px 16px;
+  border-bottom:1.5px solid #c9d4de}
+.step>.head .no{flex:none;width:32px;height:32px;border-radius:50%;background:#125eb0;color:#fff;
+  font-weight:800;display:flex;align-items:center;justify-content:center;font-size:16px}
+.step>.head b{font-size:19px;color:#0d3f78}
+.cols{display:grid;grid-template-columns:0.92fr 1.55fr 0.92fr;gap:0}
+.cols>div{padding:14px 15px;border-right:1px solid #c9d4de}
+.cols>div:last-child{border-right:0}
+.cols .t{font-size:13px;font-weight:800;letter-spacing:.4px;margin-bottom:7px}
+.cols .do .t{color:#125eb0} .cols .see .t{color:#18805b} .cols .fix .t{color:#b83e50}
+.cols p{font-size:16px;margin:0 0 7px}
+.shot{border:1px solid #c9d4de;border-radius:8px;background:#fff;padding:6px;margin-top:4px}
+.shot svg{display:block;width:100%;height:auto}
+.shot .cap{font-size:12px;color:#5f6e7d;margin-top:5px;text-align:center}
+.slot{border:2px dashed #b1791b;border-radius:8px;background:#fdf6e8;padding:12px;margin-top:8px;
+  font-size:13px;color:#b1791b;text-align:center;font-weight:700}
+.grid9{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}
+.grid9 .cell{border:1.5px solid #c9d4de;border-radius:10px;min-height:118px;padding:11px 13px;page-break-inside:avoid}
+.grid9 .cell .k{font-size:13px;font-weight:800;color:#125eb0;margin-bottom:6px}
+.grid9 .cell .v{font-size:16px}
+.grid9 .cell.blank .v{color:#b7c2cd}
+.grid9 .cell .when{float:right;font-size:11px;color:#5f6e7d;font-weight:700}
+.write{border-bottom:1.6px dotted #aab6c2;min-height:26px;margin:5px 0}
+.toc a{display:block;padding:11px 15px;margin:8px 0;border:1.5px solid #c9d4de;border-radius:10px;
+  text-decoration:none;color:#202b35;font-size:17px}
+.toc a b{color:#0d3f78}
+.toc a span{color:#5f6e7d;font-size:15px}
+@media print{
+  html,body{background:#fff}
+  .sheet{box-shadow:none;max-width:none;padding:0;margin:0}
+  h2{page-break-after:avoid}
+  @page{size:A4;margin:14mm}
+}
+</style></head><body><div class="sheet"><h1>실습 키트 v27 — 전체 지도</h1><p class="lede">기획 양식 7종 · 참고 결과물 · 데이터팩 · 초심자 가이드 7종</p><div class="toc"><a href="planning/01_린캔버스_9칸.html"><b>① 린캔버스 9칸</b> <span>— 채운 판 + 빈 판 · M2에서 2칸 → M3에서 2칸 → M4에서 나머지</span></a><a href="planning/02_페르소나.html"><b>② 페르소나 카드</b> <span>— 고객을 한 사람으로 좁힙니다 (M5)</span></a><a href="planning/03_저니맵_3단계.html"><b>③ 저니맵 3단계</b> <span>— 행동·감정·설계 기회 (M5)</span></a><a href="planning/04_요구사항명세_4칸x3.html"><b>④ 요구사항 명세</b> <span>— 명세 4칸 × 3 (정상·빈값·오류)</span></a><a href="planning/05_QA시나리오_5개.html"><b>⑤ QA 시나리오 5개</b> <span>— 예상을 먼저 적고 실제는 화면에서 (M6)</span></a><a href="planning/06_착수표_9칸.html"><b>⑥ 개인 착수표</b> <span>— M2~M4에서 채운 칸 + 가설·기능·테스트 기준 (M4)</span></a><a href="planning/07_공백과제_아이디어1장.html"><b>⑦ 공백 기간 과제</b> <span>— 9/14~18 · 네 가지</span></a><a href="reference/index.html"><b>참고 결과물 — 완성 예시</b> <span>— 랜딩 → 리포트 → 차트 → 기능 → 자동 테스트</span></a><a href="reference/test.html"><b>참고 결과물 — 자동 테스트</b> <span>— 설치 없이 브라우저만으로 4/4</span></a><a href="../../04_보조가이드팩/v27/00_가이드_지도.html"><b>초심자 가이드 7종</b> <span>— 첫 실행 · GitHub · Vercel · 실습 · 막힘 · 한도 · 제출</span></a></div><h2>데이터 (data.js)</h2><p><code>data/</code> 안의 파일은 CSV 를 감싼 <b>.js</b> 입니다. HTML 에서 <code>fetch</code> 로 CSV 를 읽으면 파일을 더블클릭해 열 때 브라우저가 막습니다(2026-09-11 실측). <code>&lt;script src="data/…js"&gt;</code> 로 불러오세요.</p><table><tr><th>파일</th><th>내용</th><th>출처</th></tr><tr><td><code>stock_sample.js</code></td><td>가상 주가 120영업일 — <b>시연 주제</b></td><td>교육용 합성 · 실제 종목 아님</td></tr><tr><td><code>kr_ltir.js</code></td><td>한국 장기금리 월간 — 시연의 관련 지표</td><td>OECD · IRLT (CC BY 4.0)</td></tr><tr><td><code>news_sample.js</code></td><td>뉴스 5건 (제목·주소·날짜)</td><td>한국은행 RSS · 본문 미포함</td></tr><tr><td><code>us10y.js</code></td><td>미국 10년물 금리 일간 (트랙 선택용)</td><td>FRED · DGS10</td></tr><tr><td><code>krwusd.js</code> · <code>wb_fx_year.js</code></td><td>원/달러 (M3 데이터 점검 연습용 · 환율 트랙 선택)</td><td>FRED · World Bank</td></tr></table><div class="warn">모든 산출물은 <b>인터넷 없이</b> 열립니다. 외부 글꼴·CDN·fetch 를 쓰지 않습니다.</div><div class="meta">부산대 미래시민교육원 핀테크 AI 18H · 주식회사 코스타트 · 근거: 08_제작전_확정표_2026-09-11 §3 · §8 P0 · 2026-09-11 실측</div></div></body></html>

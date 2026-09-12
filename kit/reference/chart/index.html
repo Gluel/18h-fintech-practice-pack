@@ -1,0 +1,40 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>주가 흐름 차트와 검산</title><style>body{font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+margin:0;color:#202b35;line-height:1.62;word-break:keep-all}
+header{background:#0d3f78;color:#fff;padding:34px 26px}
+header h1{margin:0 0 6px;font-size:30px}header p{margin:0;opacity:.9}
+main{max-width:900px;margin:0 auto;padding:0 26px}
+section{padding:22px 0;border-bottom:1px solid #e2e8ee}
+h2{font-size:21px;color:#0d3f78;margin:0 0 10px}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th{background:#f1f6fa;color:#125eb0;text-align:left;padding:9px 11px;font-size:14px}
+td{border-bottom:1px solid #e2e8ee;padding:9px 11px;vertical-align:top}
+a.btn{display:inline-block;padding:9px 15px;border:1.5px solid #125eb0;border-radius:8px;
+margin:0 8px 8px 0;text-decoration:none;color:#125eb0;font-weight:700}
+.tag{display:inline-block;font-size:12px;padding:2px 9px;border-radius:11px;background:#f1f6fa;
+color:#5f6e7d;border:1px solid #c9d4de;margin-right:5px}
+.warn{background:#fdf0f2;border-left:5px solid #b83e50;padding:11px 14px;margin:10px 0;font-size:15px}
+.ok{background:#edf6f1;border-left:5px solid #18805b;padding:11px 14px;margin:10px 0;font-size:15px}
+footer{padding:20px 26px;font-size:13px;color:#5f6e7d;text-align:center;background:#f6f8fa}
+img{max-width:100%;border:1px solid #c9d4de;border-radius:6px}
+.note{font-size:13px;color:#5f6e7d}
+button,select{font:inherit;max-width:100%;padding:7px 10px;margin:3px 0}
+</style></head><body><header><h1>주가 흐름 차트와 검산</h1><p>외부 라이브러리·CDN 없이 SVG 로 그렸습니다 · 가상 데이터</p></header><main><section><h2>(가상)한빛전자 와 20일 이동평균</h2><div id="chart"></div><p class="note">파랑 = 종가 · 주황 = 20일 이동평균 · 단위 원 · 2026-01-02~06-18 · <b>가상 데이터(SYNTHETIC_NOT_REAL)</b> · 투자 판단 근거 아님</p><p><b>해석</b> — 최근 구간에서 종가가 이동평균 아래에 있습니다. 흐름을 읽는 연습이지 매매 신호가 아닙니다.</p><p><b>한계</b> — 실제 종목이 아닙니다. 주가 관측 기간(1~6월)과 뉴스 발행 기간(8~9월)이 달라 뉴스 전후 주가 효과는 비교할 수 없습니다.</p></section><section><h2>검산용 값</h2><p>화면의 숫자 하나를 계산기로 다시 계산해 보세요. 같아야 합니다.</p><table id="verify"><tr><th>항목</th><th>값</th><th>계산식</th></tr></table></section><section><h2>관련 지표 — 한국 장기금리 (월간)</h2><table id="rates"><tr><th>연월</th><th>장기금리 %</th><th>전월 대비 %p</th></tr></table><p class="note">출처 OECD (CC BY 4.0) · 전체 원본에 전월 값이 없을 때만 계산하지 않습니다 — 0으로 채우지 않습니다.</p></section><script src="../data/stock_sample.js"></script><script src="../data/kr_ltir.js"></script><script src="chart.js"></script><script>
+const st=window.DATA_STOCK.rows;
+const ma=movingAverage(st,20);
+lineChart(document.getElementById("chart"),[
+  {rows:st,color:"#125eb0"},{rows:ma,color:"#b1791b"}],
+  {title:"가상 주가와 20일 이동평균",decimals:0});
+const first20=st.slice(0,20);const ma20=first20.reduce((a,b)=>a+b[1],0)/20;
+const lastMa=ma.filter(r=>r[1]!==null).slice(-1)[0];
+const v=document.getElementById("verify");
+[["20일 이동평균 ("+first20[19][0]+")",ma20.toFixed(2)+" 원","1/2~1/29 종가 20개 합 ÷ 20 · 손계산 47,954.50 과 일치"],
+ ["마지막 20일 이동평균 ("+lastMa[0]+")",lastMa[1].toFixed(2)+" 원","최근 종가 20개 합 ÷ 20"]]
+.forEach(r=>{const tr=document.createElement("tr");
+  tr.innerHTML=r.map(c=>`<td>${c}</td>`).join("");v.appendChild(tr);});
+const y=document.getElementById("rates");const ir=window.DATA_KR_LTIR.rows;
+ir.slice(-8).forEach((r,i,arr)=>{const index=ir.length-arr.length+i;const prev=index?ir[index-1][1]:null;
+  const tr=document.createElement("tr");
+  tr.innerHTML=`<td>${r[0]}</td><td>${r[1].toFixed(2)}</td>`+
+    `<td>${prev===null?"계산 불가(전월 없음)":(r[1]-prev).toFixed(2)+"%p"}</td>`;
+  y.appendChild(tr);});
+</script></main><footer>수업 과제 데모 · 투자 판단 근거 아님 · 부산대 미래시민교육원 핀테크 AI 18H · 주식회사 코스타트</footer></body></html>

@@ -1,0 +1,92 @@
+[
+  {
+    "year": 2015,
+    "nominal_gdp_usd": "1539212301135.55",
+    "inflation_percent": "0.70633177245575",
+    "exchange_rate": "1130.9525",
+    "exchange_rate_yoy_percent": null,
+    "inflation_change_pp": null,
+    "exchange_rate_index_2015_100": "100"
+  },
+  {
+    "year": 2016,
+    "nominal_gdp_usd": "1579150518945.44",
+    "inflation_percent": "0.971685739912168",
+    "exchange_rate": "1160.7675",
+    "exchange_rate_yoy_percent": "2.636273406708062451782899800",
+    "inflation_change_pp": "0.265353967456418",
+    "exchange_rate_index_2015_100": "102.6362734067080624517828998"
+  },
+  {
+    "year": 2017,
+    "nominal_gdp_usd": "1710196756713.17",
+    "inflation_percent": "1.94433230786366",
+    "exchange_rate": "1131.00083333333",
+    "exchange_rate_yoy_percent": "-2.564395252853823009345110020",
+    "inflation_change_pp": "0.972646567951492",
+    "exchange_rate_index_2015_100": "100.0042736837603701304873547"
+  },
+  {
+    "year": 2018,
+    "nominal_gdp_usd": "1824251454306.83",
+    "inflation_percent": "1.47583935002645",
+    "exchange_rate": "1100.16333333333",
+    "exchange_rate_yoy_percent": "-2.726567398638824246570400810",
+    "inflation_change_pp": "-0.46849295783721",
+    "exchange_rate_index_2015_100": "97.27758976025341471016687261"
+  },
+  {
+    "year": 2019,
+    "nominal_gdp_usd": "1751045752054.63",
+    "inflation_percent": "0.383000303608136",
+    "exchange_rate": "1165.3575",
+    "exchange_rate_yoy_percent": "5.925862523443809633910490400",
+    "inflation_change_pp": "-1.092839046418314",
+    "exchange_rate_index_2015_100": "103.0421259955656846772963498"
+  },
+  {
+    "year": 2020,
+    "nominal_gdp_usd": "1744070276373.34",
+    "inflation_percent": "0.537288023411737",
+    "exchange_rate": "1180.26583333333",
+    "exchange_rate_yoy_percent": "1.279292692013395031138513300",
+    "inflation_change_pp": "0.154287719803601",
+    "exchange_rate_index_2015_100": "104.3603363831221912502956579"
+  },
+  {
+    "year": 2021,
+    "nominal_gdp_usd": "1942313560965.9",
+    "inflation_percent": "2.49833333333339",
+    "exchange_rate": "1143.95166666667",
+    "exchange_rate_yoy_percent": "-3.076778607078781197678226670",
+    "inflation_change_pp": "1.961045309921653",
+    "exchange_rate_index_2015_100": "101.1493998790108337883332854"
+  },
+  {
+    "year": 2022,
+    "nominal_gdp_usd": "1799363116866.52",
+    "inflation_percent": "5.08951365062842",
+    "exchange_rate": "1291.44666666667",
+    "exchange_rate_yoy_percent": "12.89346432177346393287501430",
+    "inflation_change_pp": "2.59118031729503",
+    "exchange_rate_index_2015_100": "114.1910616640990669369403224"
+  },
+  {
+    "year": 2023,
+    "nominal_gdp_usd": "1844800934391.54",
+    "inflation_percent": "3.5974562502901",
+    "exchange_rate": "1305.6625",
+    "exchange_rate_yoy_percent": "1.100768130829764293355433900",
+    "inflation_change_pp": "-1.49205740033832",
+    "exchange_rate_index_2015_100": "115.4480404791536337733017081"
+  },
+  {
+    "year": 2024,
+    "nominal_gdp_usd": "1875388209406.8",
+    "inflation_percent": "2.32174328643542",
+    "exchange_rate": "1363.375",
+    "exchange_rate_yoy_percent": "4.420169837151637578623878700",
+    "inflation_change_pp": "-1.27571296385468",
+    "exchange_rate_index_2015_100": "120.5510399419957955793899390"
+  }
+]

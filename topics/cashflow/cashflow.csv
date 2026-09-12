@@ -1,0 +1,3 @@
+scenario,opening_krw,inflow_krw,outflow_krw,daily_burn_krw
+sample_A,300000,100000,150000,10000
+sample_B,300000,100000,150000,0

@@ -1,0 +1,9 @@
+record_id,category,amount_krw,data_kind
+E01,food,8000,synthetic
+E02,transport,1500,synthetic
+E03,food,6000,synthetic
+E04,learning,12000,synthetic
+E05,transport,1500,synthetic
+E06,food,10000,synthetic
+E07,learning,5000,synthetic
+E08,other,3000,synthetic

@@ -1,0 +1,63 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>가이드 ④ 모듈별 실습 Lv1</title><style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#eef1f5;color:#202b35;
+  font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic","맑은 고딕",system-ui,sans-serif;
+  line-height:1.6;word-break:keep-all;overflow-wrap:anywhere}
+.sheet{max-width:1000px;margin:0 auto 22px;background:#fff;padding:38px 44px 44px;
+  box-shadow:0 1px 4px rgba(20,40,60,.10)}
+h1{font-size:34px;margin:0 0 6px;letter-spacing:-.6px}
+h2{font-size:25px;margin:34px 0 12px;padding-bottom:8px;border-bottom:3px solid #125eb0;color:#0d3f78}
+h3{font-size:20px;margin:22px 0 8px;color:#125eb0}
+p,li{font-size:17px}
+.lede{font-size:18px;color:#5f6e7d;margin:0 0 18px}
+.meta{font-size:14px;color:#5f6e7d;border-top:1px solid #c9d4de;margin-top:34px;padding-top:12px}
+table{width:100%;border-collapse:collapse;margin:12px 0 18px;font-size:16px}
+th{background:#0d3f78;color:#fff;text-align:left;padding:11px 13px;font-size:15px;font-weight:700}
+td{border-bottom:1px solid #c9d4de;padding:11px 13px;vertical-align:top}
+tr:nth-child(even) td{background:#f1f6fa}
+.note{background:#fdf6e8;border-left:6px solid #b1791b;padding:13px 17px;margin:14px 0;font-size:16px}
+.warn{background:#fdf0f2;border-left:6px solid #b83e50;padding:13px 17px;margin:14px 0;font-size:16px}
+.ok{background:#edf6f1;border-left:6px solid #18805b;padding:13px 17px;margin:14px 0;font-size:16px}
+.copy{background:#0f2740;color:#dbe7f3;border-radius:10px;padding:16px 18px;margin:12px 0;
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:15px;line-height:1.62;white-space:pre-wrap}
+.copy b{color:#ffd479;font-weight:700}
+.chip{display:inline-block;padding:4px 12px;border-radius:14px;font-size:14px;font-weight:700;
+  background:#f1f6fa;color:#125eb0;border:1.5px solid #125eb0;margin:0 6px 6px 0}
+.chip.g{background:#edf6f1;color:#18805b;border-color:#18805b}
+.chip.r{background:#fdf0f2;color:#b83e50;border-color:#b83e50}
+.chip.a{background:#fdf6e8;color:#b1791b;border-color:#b1791b}
+.step{border:1.5px solid #c9d4de;border-radius:12px;margin:16px 0;overflow:hidden;page-break-inside:avoid}
+.step>.head{display:flex;gap:13px;align-items:center;background:#f1f6fa;padding:12px 16px;
+  border-bottom:1.5px solid #c9d4de}
+.step>.head .no{flex:none;width:32px;height:32px;border-radius:50%;background:#125eb0;color:#fff;
+  font-weight:800;display:flex;align-items:center;justify-content:center;font-size:16px}
+.step>.head b{font-size:19px;color:#0d3f78}
+.cols{display:grid;grid-template-columns:0.92fr 1.55fr 0.92fr;gap:0}
+.cols>div{padding:14px 15px;border-right:1px solid #c9d4de}
+.cols>div:last-child{border-right:0}
+.cols .t{font-size:13px;font-weight:800;letter-spacing:.4px;margin-bottom:7px}
+.cols .do .t{color:#125eb0} .cols .see .t{color:#18805b} .cols .fix .t{color:#b83e50}
+.cols p{font-size:16px;margin:0 0 7px}
+.shot{border:1px solid #c9d4de;border-radius:8px;background:#fff;padding:6px;margin-top:4px}
+.shot svg{display:block;width:100%;height:auto}
+.shot .cap{font-size:12px;color:#5f6e7d;margin-top:5px;text-align:center}
+.slot{border:2px dashed #b1791b;border-radius:8px;background:#fdf6e8;padding:12px;margin-top:8px;
+  font-size:13px;color:#b1791b;text-align:center;font-weight:700}
+.grid9{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}
+.grid9 .cell{border:1.5px solid #c9d4de;border-radius:10px;min-height:118px;padding:11px 13px;page-break-inside:avoid}
+.grid9 .cell .k{font-size:13px;font-weight:800;color:#125eb0;margin-bottom:6px}
+.grid9 .cell .v{font-size:16px}
+.grid9 .cell.blank .v{color:#b7c2cd}
+.grid9 .cell .when{float:right;font-size:11px;color:#5f6e7d;font-weight:700}
+.write{border-bottom:1.6px dotted #aab6c2;min-height:26px;margin:5px 0}
+.toc a{display:block;padding:11px 15px;margin:8px 0;border:1.5px solid #c9d4de;border-radius:10px;
+  text-decoration:none;color:#202b35;font-size:17px}
+.toc a b{color:#0d3f78}
+.toc a span{color:#5f6e7d;font-size:15px}
+@media print{
+  html,body{background:#fff}
+  .sheet{box-shadow:none;max-width:none;padding:0;margin:0}
+  h2{page-break-after:avoid}
+  @page{size:A4;margin:14mm}
+}
+</style></head><body><div class="sheet"><h1>가이드 ④ 모듈별 실습 Lv1</h1><p class="lede">M1~M6에서 최소한 여기까지. 3단 사다리의 첫 칸입니다.</p><div class="ok">모든 실습은 <b>3단</b>입니다. <span class="chip">Lv1 기본</span><span class="chip g">Lv2 확장</span><span class="chip a">Lv3 도전</span> <b>Lv1 만 해도 됩니다.</b> 먼저 끝나면 기다리지 말고 다음 카드로 가세요. Lv2·Lv3 를 못 했다고 실패가 아닙니다.</div><h2>M1 · Lv1 — 제목을 바꾸고 화면에서 확인</h2><p class="lede">여기까지만 하셔도 결과물이 남습니다. 끝나면 Lv2 로 가세요.</p><table><tr><th style="width:52%">할 일</th><th>이렇게 되면 됩니다</th></tr><tr><td>Claude 앱에서 M1_start 폴더 열기</td><td>index.html · docs · data 가 보인다</td></tr><tr><td>「이 폴더에 뭐가 있는지 설명해줘. 수정하지 말고 읽은 파일을 알려줘」</td><td>읽은 파일 이름이 나온다</td></tr><tr><td>「제목을 ○○로 바꿔줘. 다른 곳은 바꾸지 마」</td><td>바꾼 파일 하나만 알려준다</td></tr><tr><td>브라우저 새로고침(F5)</td><td>제목만 바뀌고 값·출처는 그대로 — 여기까지가 Lv1</td></tr><tr><td>GitHub 에 업로드</td><td>목록에 index.html 이 맨 위에 보인다</td></tr></table><h2>M2 · Lv1 — 저장본에서 목록 5건을 표로</h2><p class="lede">여기까지만 하셔도 결과물이 남습니다. 끝나면 Lv2 로 가세요.</p><table><tr><th style="width:52%">할 일</th><th>이렇게 되면 됩니다</th></tr><tr><td>강사 저장본 폴더를 앱에서 열기</td><td>snapshot 폴더가 보인다</td></tr><tr><td>「저장본에서 제목·전체 주소·발행일·출처를 5건만 표로 보여줘」</td><td>표 5행이 나온다</td></tr><tr><td>원문 링크 5개를 모두 눌러 보기</td><td>원문 페이지가 열린다</td></tr><tr><td>「확인한 표로 report.html 을 만들어줘. 외부 CSS·JS·폰트 없이 한 파일로」</td><td>report.html 이 생긴다</td></tr><tr><td>브라우저로 report.html 열기</td><td>표와 출처·수집일이 보인다</td></tr></table><h2>M3 · Lv1 — 데이터 한 개를 받아 점검</h2><p class="lede">여기까지만 하셔도 결과물이 남습니다. 끝나면 Lv2 로 가세요.</p><table><tr><th style="width:52%">할 일</th><th>이렇게 되면 됩니다</th></tr><tr><td>내 트랙에 맞는 파일 하나 고르기</td><td>data 폴더에 파일이 있다</td></tr><tr><td>「행 수, 첫 3행, 마지막 날짜, 빈 값 개수(빈칸과 점 모두), 최솟값·최댓값을 표로 보여줘」</td><td>점검 표가 나온다</td></tr><tr><td>저장 원본 CSV의 값 1개와 JS의 값을 대조</td><td>가상 주가는 웹 시세가 없으므로 CSV와 대조한다</td></tr><tr><td>데이터 사전 4칸 적기 (열·단위·기간·빈 값 규칙)</td><td>docs 에 파일이 생긴다</td></tr><tr><td>근거 카드 5칸 적기</td><td>출처·수집일·기준시점·갱신주기·한계</td></tr></table><h2>M4 · Lv1 — 차트 1개와 출처·기간</h2><p class="lede">여기까지만 하셔도 결과물이 남습니다. 끝나면 Lv2 로 가세요.</p><table><tr><th style="width:52%">할 일</th><th>이렇게 되면 됩니다</th></tr><tr><td>「아직 구현하지 마. 화면 설계안 3개를 5칸 표로 보여줘」</td><td>표 3행이 나온다</td></tr><tr><td>번호 하나를 고르고 이유를 한 문장으로 말하기</td><td>고른 안이 정해진다</td></tr><tr><td>「stock_sample.csv를 data/stock_sample.js의 window.DATA_STOCK으로 감싸줘」</td><td>rows의 날짜·값이 원본 CSV와 같다</td></tr><tr><td>「고른 안으로 만들어줘. 외부 라이브러리·CDN 없이 SVG 로. 계산은 페이지 JavaScript 가」</td><td>차트가 그려진다</td></tr><tr><td>계산값 1개를 계산기로 검산</td><td>화면 값과 같다</td></tr></table><h2>M5 · Lv1 — 정상 경로 하나가 동작</h2><p class="lede">여기까지만 하셔도 결과물이 남습니다. 끝나면 Lv2 로 가세요.</p><table><tr><th style="width:52%">할 일</th><th>이렇게 되면 됩니다</th></tr><tr><td>docs/lean_canvas.md · docs/persona_journey.md 를 열어 고치고 저장</td><td>닫았다 다시 열어도 내 문장이 남아 있다</td></tr><tr><td>개인 주제 요구사항 3개 쓰기 (정상·빈값·오류); 계산 기능이면 R-04 추가</td><td>docs/requirements.md 에 R-01~R-03 (계산 선택 시 R-04)</td></tr><tr><td>「docs/requirements.md 의 R-01만 구현해줘. index.html만 고치고 data는 읽기만 해」</td><td>바꾼 파일 목록이 나온다</td></tr><tr><td>브라우저에서 R-01 을 직접 해 보기</td><td>명세에 적은 결과가 나온다</td></tr><tr><td>README 에 수정 이력 한 줄</td><td>언제 무엇을 왜 바꿨는지</td></tr></table><h2>M6 · Lv1 — 한 곳 고치고 다시 확인</h2><p class="lede">여기까지만 하셔도 결과물이 남습니다. 끝나면 Lv2 로 가세요.</p><table><tr><th style="width:52%">할 일</th><th>이렇게 되면 됩니다</th></tr><tr><td>QA 시나리오 5개 표 만들기 (예상까지만)</td><td>docs/qa_scenarios.md</td></tr><tr><td>옆자리와 서로 테스트하고 실제 결과 채우기</td><td>통과/실패가 채워진다</td></tr><tr><td>실패 1건을 골라 고치기</td><td>한 번에 하나만</td></tr><tr><td>원래 되던 기능 다시 확인 (회귀)</td><td>둘 다 통과한다</td></tr><tr><td>랜딩페이지 만들고 재배포</td><td>짧은 주소가 시크릿 창에서 열린다</td></tr></table><h2>매 모듈 끝에 하는 것 (공통)</h2><table><tr><th style="width:26%">순서</th><th>내용</th></tr><tr><td><b>1. GitHub 업로드</b></td><td>폴더를 열고 Ctrl+A → 끌어 놓기 → Commit</td></tr><tr><td><b>2. 캡처 1장</b></td><td>바뀐 화면을 캡처 (Windows: Win+Shift+S)</td></tr><tr><td><b>3. 패들렛</b></td><td>제목 「D일차-모듈_번호_이름」 · 링크 + 캡처 + 못 한 것</td></tr></table><div class="note">못 한 것을 <b>못 했다고 적는 것</b>도 결과입니다. 완성 주장보다 실제 작업 기록이 평가 기준입니다.</div><div class="meta">부산대 미래시민교육원 핀테크 AI 18H · 주식회사 코스타트 · 2026-09-11 · 실습 PC = Windows + Claude 데스크톱 앱 기준 · 화면 도식은 <b>재현 도식</b>이며 9/12 실습 PC 캡처로 교체합니다</div></div></body></html>

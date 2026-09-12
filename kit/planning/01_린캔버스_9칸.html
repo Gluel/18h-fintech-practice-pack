@@ -1,0 +1,63 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>린캔버스 9칸</title><style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#eef1f5;color:#202b35;
+  font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic","맑은 고딕",system-ui,sans-serif;
+  line-height:1.6;word-break:keep-all;overflow-wrap:anywhere}
+.sheet{max-width:1000px;margin:0 auto 22px;background:#fff;padding:38px 44px 44px;
+  box-shadow:0 1px 4px rgba(20,40,60,.10)}
+h1{font-size:34px;margin:0 0 6px;letter-spacing:-.6px}
+h2{font-size:25px;margin:34px 0 12px;padding-bottom:8px;border-bottom:3px solid #125eb0;color:#0d3f78}
+h3{font-size:20px;margin:22px 0 8px;color:#125eb0}
+p,li{font-size:17px}
+.lede{font-size:18px;color:#5f6e7d;margin:0 0 18px}
+.meta{font-size:14px;color:#5f6e7d;border-top:1px solid #c9d4de;margin-top:34px;padding-top:12px}
+table{width:100%;border-collapse:collapse;margin:12px 0 18px;font-size:16px}
+th{background:#0d3f78;color:#fff;text-align:left;padding:11px 13px;font-size:15px;font-weight:700}
+td{border-bottom:1px solid #c9d4de;padding:11px 13px;vertical-align:top}
+tr:nth-child(even) td{background:#f1f6fa}
+.note{background:#fdf6e8;border-left:6px solid #b1791b;padding:13px 17px;margin:14px 0;font-size:16px}
+.warn{background:#fdf0f2;border-left:6px solid #b83e50;padding:13px 17px;margin:14px 0;font-size:16px}
+.ok{background:#edf6f1;border-left:6px solid #18805b;padding:13px 17px;margin:14px 0;font-size:16px}
+.copy{background:#0f2740;color:#dbe7f3;border-radius:10px;padding:16px 18px;margin:12px 0;
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:15px;line-height:1.62;white-space:pre-wrap}
+.copy b{color:#ffd479;font-weight:700}
+.chip{display:inline-block;padding:4px 12px;border-radius:14px;font-size:14px;font-weight:700;
+  background:#f1f6fa;color:#125eb0;border:1.5px solid #125eb0;margin:0 6px 6px 0}
+.chip.g{background:#edf6f1;color:#18805b;border-color:#18805b}
+.chip.r{background:#fdf0f2;color:#b83e50;border-color:#b83e50}
+.chip.a{background:#fdf6e8;color:#b1791b;border-color:#b1791b}
+.step{border:1.5px solid #c9d4de;border-radius:12px;margin:16px 0;overflow:hidden;page-break-inside:avoid}
+.step>.head{display:flex;gap:13px;align-items:center;background:#f1f6fa;padding:12px 16px;
+  border-bottom:1.5px solid #c9d4de}
+.step>.head .no{flex:none;width:32px;height:32px;border-radius:50%;background:#125eb0;color:#fff;
+  font-weight:800;display:flex;align-items:center;justify-content:center;font-size:16px}
+.step>.head b{font-size:19px;color:#0d3f78}
+.cols{display:grid;grid-template-columns:0.92fr 1.55fr 0.92fr;gap:0}
+.cols>div{padding:14px 15px;border-right:1px solid #c9d4de}
+.cols>div:last-child{border-right:0}
+.cols .t{font-size:13px;font-weight:800;letter-spacing:.4px;margin-bottom:7px}
+.cols .do .t{color:#125eb0} .cols .see .t{color:#18805b} .cols .fix .t{color:#b83e50}
+.cols p{font-size:16px;margin:0 0 7px}
+.shot{border:1px solid #c9d4de;border-radius:8px;background:#fff;padding:6px;margin-top:4px}
+.shot svg{display:block;width:100%;height:auto}
+.shot .cap{font-size:12px;color:#5f6e7d;margin-top:5px;text-align:center}
+.slot{border:2px dashed #b1791b;border-radius:8px;background:#fdf6e8;padding:12px;margin-top:8px;
+  font-size:13px;color:#b1791b;text-align:center;font-weight:700}
+.grid9{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}
+.grid9 .cell{border:1.5px solid #c9d4de;border-radius:10px;min-height:118px;padding:11px 13px;page-break-inside:avoid}
+.grid9 .cell .k{font-size:13px;font-weight:800;color:#125eb0;margin-bottom:6px}
+.grid9 .cell .v{font-size:16px}
+.grid9 .cell.blank .v{color:#b7c2cd}
+.grid9 .cell .when{float:right;font-size:11px;color:#5f6e7d;font-weight:700}
+.write{border-bottom:1.6px dotted #aab6c2;min-height:26px;margin:5px 0}
+.toc a{display:block;padding:11px 15px;margin:8px 0;border:1.5px solid #c9d4de;border-radius:10px;
+  text-decoration:none;color:#202b35;font-size:17px}
+.toc a b{color:#0d3f78}
+.toc a span{color:#5f6e7d;font-size:15px}
+@media print{
+  html,body{background:#fff}
+  .sheet{box-shadow:none;max-width:none;padding:0;margin:0}
+  h2{page-break-after:avoid}
+  @page{size:A4;margin:14mm}
+}
+</style></head><body><div class="sheet"><h1>린캔버스 9칸</h1><p class="lede">내 서비스 가설을 한 장에. M2에서 2칸 → M3에서 2칸 → M4에서 2칸 → M5에서 나머지 3칸.</p><div class="ok"><span class="chip g">예시 주제</span> <b>「금융 뉴스 옆에 주식 투자 판단 지표 한 줄」</b> — 금융 뉴스를 보고 주식 투자 판단을 미루는 사회초년생을 돕는 화면입니다. 3일 내내 같은 주제로 이어집니다. <b>매매를 권유하지 않고 지표만 보여줍니다.</b></div><div class="warn"><b>이 화면은 예시입니다 — 여기에 입력하는 것이 아닙니다.</b><br>작업 폴더의 <b>my_project/docs/lean_canvas.md</b> 을 Claude 앱(Code 탭)이나 메모장으로 열고 <b>해당 줄을 고쳐 저장</b>합니다. 저장한 뒤 파일을 닫았다 다시 열어 내용이 남아 있는지 확인하세요.<br><span class="note">종이로 쓰시는 분은 이 화면을 인쇄해 손으로 적고, 사진을 패들렛에 올리셔도 됩니다.</span></div><div class="note">아래 「채운 판」은 <b>교육용 가상 예시</b>입니다. 실제 사용자 인터뷰나 통계가 아닙니다. 여러분 주제로 바꿔 쓰시면 됩니다.</div><h2>채운 판 — 「금융 뉴스 옆에 주식 투자 판단 지표 한 줄」</h2><p>칸 오른쪽 위의 <b>M2·M3·M4</b>는 <b>언제 채우는 칸</b>인지입니다. 한 번에 다 채우지 않습니다.</p><div class="grid9"><div class="cell"><div class="k"><span class="when">M2</span>① 문제</div><div class="v">금융 뉴스를 봐도 주식을 사야 할지 둬야 할지 판단을 미룬다</div></div><div class="cell"><div class="k"><span class="when">M2</span>② 고객</div><div class="v">첫 주식 투자를 시작한 1~2년차 직장인 · 굴릴 돈 1천만원</div></div><div class="cell"><div class="k"><span class="when">M4</span>③ 고유의 가치 제안</div><div class="v">뉴스 한 건에 관련 지표와 주가 흐름(20일 이동평균)을 붙여 준다</div></div><div class="cell"><div class="k"><span class="when">M3</span>④ 솔루션</div><div class="v">뉴스 5건 + 장기금리 + 가상 주가 20일 이동평균을 한 화면에</div></div><div class="cell"><div class="k"><span class="when">M3</span>⑤ 핵심 지표</div><div class="v">지표와 주가 흐름까지 보고 판단을 기록한 뉴스 건수</div></div><div class="cell"><div class="k"><span class="when">M4</span>⑥ 채널</div><div class="v">수업 패들렛 · 내 Vercel 짧은 주소</div></div><div class="cell"><div class="k"><span class="when">M5</span>⑦ 수익 흐름</div><div class="v">없음 — 수업 과제 데모</div></div><div class="cell"><div class="k"><span class="when">M5</span>⑧ 비용 구조</div><div class="v">공개 데이터 · 무료 배포</div></div><div class="cell"><div class="k"><span class="when">M5</span>⑨ 경쟁 우위</div><div class="v">출처·수집일·한계를 화면에 적는다</div></div></div><div class="ok">칸마다 <b>한 문장</b>입니다. 길게 쓰면 나중에 요구사항으로 쪼갤 수 없습니다.</div><h2>빈 판 — 내 주제로</h2><div class="grid9"><div class="cell blank"><div class="k"><span class="when">M2</span>① 문제</div><div class="v">지금 누가 무엇 때문에 불편한가? 한 문장</div><div class="write"></div><div class="write"></div></div><div class="cell blank"><div class="k"><span class="when">M2</span>② 고객</div><div class="v">그 사람을 한 줄로 (나이 말고 상황으로)</div><div class="write"></div><div class="write"></div></div><div class="cell blank"><div class="k"><span class="when">M4</span>③ 고유의 가치 제안</div><div class="v">비슷한 것과 무엇이 다른가?</div><div class="write"></div><div class="write"></div></div><div class="cell blank"><div class="k"><span class="when">M3</span>④ 솔루션</div><div class="v">무엇을 보여주나? (기능 말고 화면으로)</div><div class="write"></div><div class="write"></div></div><div class="cell blank"><div class="k"><span class="when">M3</span>⑤ 핵심 지표</div><div class="v">무엇이 늘면 잘 되고 있는 것인가?</div><div class="write"></div><div class="write"></div></div><div class="cell blank"><div class="k"><span class="when">M4</span>⑥ 채널</div><div class="v">어떻게 전달되나?</div><div class="write"></div><div class="write"></div></div><div class="cell blank"><div class="k"><span class="when">M5</span>⑦ 수익 흐름</div><div class="v">수업에서는 비워도 됩니다</div><div class="write"></div><div class="write"></div></div><div class="cell blank"><div class="k"><span class="when">M5</span>⑧ 비용 구조</div><div class="v">수업에서는 비워도 됩니다</div><div class="write"></div><div class="write"></div></div><div class="cell blank"><div class="k"><span class="when">M5</span>⑨ 경쟁 우위</div><div class="v">남이 쉽게 따라 못 하는 것</div><div class="write"></div><div class="write"></div></div></div><h3>이 양식에 나오는 말</h3><table><tr><td style="width:22%"><b>명세</b></td><td>만들 것을 확인할 수 있게 적은 문장. 「예쁘게」가 아니라 「5건이 보인다」처럼.</td></tr><tr><td style="width:22%"><b>요구사항</b></td><td>명세를 번호로 관리한 것. R-01 처럼 번호를 붙입니다.</td></tr></table><div class="meta">부산대 미래시민교육원 핀테크 AI 18H · 주식회사 코스타트 · 교육용 예시 · 실제 사용자 조사 결과가 아닙니다 · 근거: 08_제작전_확정표_2026-09-11 §3 · §8 P0</div></div></body></html>

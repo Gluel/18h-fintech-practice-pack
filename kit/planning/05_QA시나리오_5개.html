@@ -1,0 +1,65 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>QA 시나리오 5개</title><style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#eef1f5;color:#202b35;
+  font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic","맑은 고딕",system-ui,sans-serif;
+  line-height:1.6;word-break:keep-all;overflow-wrap:anywhere}
+.sheet{max-width:1000px;margin:0 auto 22px;background:#fff;padding:38px 44px 44px;
+  box-shadow:0 1px 4px rgba(20,40,60,.10)}
+h1{font-size:34px;margin:0 0 6px;letter-spacing:-.6px}
+h2{font-size:25px;margin:34px 0 12px;padding-bottom:8px;border-bottom:3px solid #125eb0;color:#0d3f78}
+h3{font-size:20px;margin:22px 0 8px;color:#125eb0}
+p,li{font-size:17px}
+.lede{font-size:18px;color:#5f6e7d;margin:0 0 18px}
+.meta{font-size:14px;color:#5f6e7d;border-top:1px solid #c9d4de;margin-top:34px;padding-top:12px}
+table{width:100%;border-collapse:collapse;margin:12px 0 18px;font-size:16px}
+th{background:#0d3f78;color:#fff;text-align:left;padding:11px 13px;font-size:15px;font-weight:700}
+td{border-bottom:1px solid #c9d4de;padding:11px 13px;vertical-align:top}
+tr:nth-child(even) td{background:#f1f6fa}
+.note{background:#fdf6e8;border-left:6px solid #b1791b;padding:13px 17px;margin:14px 0;font-size:16px}
+.warn{background:#fdf0f2;border-left:6px solid #b83e50;padding:13px 17px;margin:14px 0;font-size:16px}
+.ok{background:#edf6f1;border-left:6px solid #18805b;padding:13px 17px;margin:14px 0;font-size:16px}
+.copy{background:#0f2740;color:#dbe7f3;border-radius:10px;padding:16px 18px;margin:12px 0;
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:15px;line-height:1.62;white-space:pre-wrap}
+.copy b{color:#ffd479;font-weight:700}
+.chip{display:inline-block;padding:4px 12px;border-radius:14px;font-size:14px;font-weight:700;
+  background:#f1f6fa;color:#125eb0;border:1.5px solid #125eb0;margin:0 6px 6px 0}
+.chip.g{background:#edf6f1;color:#18805b;border-color:#18805b}
+.chip.r{background:#fdf0f2;color:#b83e50;border-color:#b83e50}
+.chip.a{background:#fdf6e8;color:#b1791b;border-color:#b1791b}
+.step{border:1.5px solid #c9d4de;border-radius:12px;margin:16px 0;overflow:hidden;page-break-inside:avoid}
+.step>.head{display:flex;gap:13px;align-items:center;background:#f1f6fa;padding:12px 16px;
+  border-bottom:1.5px solid #c9d4de}
+.step>.head .no{flex:none;width:32px;height:32px;border-radius:50%;background:#125eb0;color:#fff;
+  font-weight:800;display:flex;align-items:center;justify-content:center;font-size:16px}
+.step>.head b{font-size:19px;color:#0d3f78}
+.cols{display:grid;grid-template-columns:0.92fr 1.55fr 0.92fr;gap:0}
+.cols>div{padding:14px 15px;border-right:1px solid #c9d4de}
+.cols>div:last-child{border-right:0}
+.cols .t{font-size:13px;font-weight:800;letter-spacing:.4px;margin-bottom:7px}
+.cols .do .t{color:#125eb0} .cols .see .t{color:#18805b} .cols .fix .t{color:#b83e50}
+.cols p{font-size:16px;margin:0 0 7px}
+.shot{border:1px solid #c9d4de;border-radius:8px;background:#fff;padding:6px;margin-top:4px}
+.shot svg{display:block;width:100%;height:auto}
+.shot .cap{font-size:12px;color:#5f6e7d;margin-top:5px;text-align:center}
+.slot{border:2px dashed #b1791b;border-radius:8px;background:#fdf6e8;padding:12px;margin-top:8px;
+  font-size:13px;color:#b1791b;text-align:center;font-weight:700}
+.grid9{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}
+.grid9 .cell{border:1.5px solid #c9d4de;border-radius:10px;min-height:118px;padding:11px 13px;page-break-inside:avoid}
+.grid9 .cell .k{font-size:13px;font-weight:800;color:#125eb0;margin-bottom:6px}
+.grid9 .cell .v{font-size:16px}
+.grid9 .cell.blank .v{color:#b7c2cd}
+.grid9 .cell .when{float:right;font-size:11px;color:#5f6e7d;font-weight:700}
+.write{border-bottom:1.6px dotted #aab6c2;min-height:26px;margin:5px 0}
+.toc a{display:block;padding:11px 15px;margin:8px 0;border:1.5px solid #c9d4de;border-radius:10px;
+  text-decoration:none;color:#202b35;font-size:17px}
+.toc a b{color:#0d3f78}
+.toc a span{color:#5f6e7d;font-size:15px}
+@media print{
+  html,body{background:#fff}
+  .sheet{box-shadow:none;max-width:none;padding:0;margin:0}
+  h2{page-break-after:avoid}
+  @page{size:A4;margin:14mm}
+}
+</style></head><body><div class="sheet"><h1>QA 시나리오 5개</h1><p class="lede">만들기 전에 확인할 것을 정합니다.</p><div class="ok"><span class="chip g">예시 주제</span> <b>「금융 뉴스 옆에 주식 투자 판단 지표 한 줄」</b> — 금융 뉴스를 보고 주식 투자 판단을 미루는 사회초년생을 돕는 화면입니다. 3일 내내 같은 주제로 이어집니다. <b>매매를 권유하지 않고 지표만 보여줍니다.</b></div><div class="warn"><b>이 화면은 예시입니다 — 여기에 입력하는 것이 아닙니다.</b><br>작업 폴더의 <b>my_project/docs/qa_scenarios.md</b> 을 Claude 앱(Code 탭)이나 메모장으로 열고 <b>해당 줄을 고쳐 저장</b>합니다. 저장한 뒤 파일을 닫았다 다시 열어 내용이 남아 있는지 확인하세요.<br><span class="note">종이로 쓰시는 분은 이 화면을 인쇄해 손으로 적고, 사진을 패들렛에 올리셔도 됩니다.</span></div><div class="note">「실제 결과」와 「통과/실패」는 <b>만들기 전에 비워 둡니다.</b> 화면에서 직접 해 보고 그때 채웁니다.</div><h2>채운 판 — 참고 결과물의 실제 기록</h2><table><tr><th>번호</th><th>과업 (사용자가 하는 일)</th><th>예상 결과</th><th>실제 결과</th><th>통과/실패</th><th>조치</th></tr><tr><td>1</td><td>뉴스 목록을 연다</td><td>5건이 보이고 제목이 링크다</td><td>5건 · 링크 정상</td><td>통과</td><td>—</td></tr><tr><td>2</td><td>지표가 없는 날짜를 본다</td><td>「미공개/휴일」로 표시</td><td>표시됨</td><td>통과</td><td>—</td></tr><tr><td>3</td><td>자료가 빈 상태로 연다</td><td>「데이터가 없습니다」</td><td>빈 화면이 나옴</td><td>실패</td><td>render 에 문구 추가 후 재확인 → 통과</td></tr><tr><td>4</td><td>핵심 기능을 수행한다</td><td>R-01 결과가 나온다</td><td>평균 표시됨</td><td>통과</td><td>—</td></tr><tr><td>5</td><td>링크를 하나 클릭한다</td><td>원문 페이지가 열린다</td><td>열림</td><td>통과</td><td>—</td></tr></table><div class="ok">3번이 한 번 <b>실패</b>했고, 고친 뒤 1·4번을 다시 확인(회귀)했습니다. 실패를 지우지 않고 남기는 것이 기록입니다.</div><h2>빈 판 — 내 시나리오 5개</h2><table><tr><th>번호</th><th>과업 (사용자가 하는 일)</th><th>예상 결과</th><th>실제 결과</th><th>통과/실패</th><th>조치</th></tr><tr><td><b>1</b></td><td><div class="write"></div></td><td><div class="write"></div></td><td><div class="write"></div></td><td><div class="write"></div></td><td><div class="write"></div></td></tr><tr><td><b>2</b></td><td><div class="write"></div></td><td><div class="write"></div></td><td><div class="write"></div></td><td><div class="write"></div></td><td><div class="write"></div></td></tr><tr><td><b>3</b></td><td><div class="write"></div></td><td><div class="write"></div></td><td><div class="write"></div></td><td><div class="write"></div></td><td><div class="write"></div></td></tr><tr><td><b>4</b></td><td><div class="write"></div></td><td><div class="write"></div></td><td><div class="write"></div></td><td><div class="write"></div></td><td><div class="write"></div></td></tr><tr><td><b>5</b></td><td><div class="write"></div></td><td><div class="write"></div></td><td><div class="write"></div></td><td><div class="write"></div></td><td><div class="write"></div></td></tr></table><h3>어디서 가져오나</h3><p>새로 생각하지 않습니다. M2·M3·M4에서 적은 QA 3케이스가 이미 9개입니다. 거기서 5개를 고릅니다.</p><table><tr><th>모듈</th><th>거기서 적은 검사</th></tr><tr><td>M2</td><td>정상 · 빈 목록 · 깨진 링크</td></tr><tr><td>M3</td><td>빈 값 · 단위 · 기간</td></tr><tr><td>M4</td><td>검산 · 빈 기간 · 단위</td></tr></table><h3>AI에게 표를 만들어 달라고 할 때</h3><div class="copy">README·docs/requirements.md·M2~M5 QA 케이스를 모아
+docs/qa_scenarios.md 에 시나리오 5개 표(번호·과업·예상·실제·통과/실패·조치)를 만들어줘.
+<b>실제와 통과/실패는 비워 둬</b> — 내가 화면에서 채울게.</div><h3>이 양식에 나오는 말</h3><table><tr><td style="width:22%"><b>QA</b></td><td>만든 것이 생각대로 되는지 확인하는 일. 여기서는 「검사」라고 씁니다.</td></tr><tr><td style="width:22%"><b>시나리오</b></td><td>사용자가 하는 일 한 가지와 그때 기대하는 결과를 적은 줄.</td></tr><tr><td style="width:22%"><b>회귀 확인</b></td><td>한 곳을 고친 뒤, 원래 되던 것이 그대로인지 다시 보는 것.</td></tr><tr><td style="width:22%"><b>미실행</b></td><td>해 보지 않은 것. 「통과」로 적지 않고 미실행이라고 적습니다.</td></tr></table><div class="meta">부산대 미래시민교육원 핀테크 AI 18H · 주식회사 코스타트 · 교육용 예시 · 실제 사용자 조사 결과가 아닙니다 · 근거: 08_제작전_확정표_2026-09-11 §3 · §8 P0</div></div></body></html>

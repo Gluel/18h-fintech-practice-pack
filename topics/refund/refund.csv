@@ -1,0 +1,4 @@
+case_id,stage,next_check
+R01,draft,receipt
+R02,review,status
+R03,done,complete
