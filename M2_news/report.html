@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>금융 뉴스 리포트 | M2 실습</title>
+<style>
+  :root { --navy:#173b70; --line:#dce4f0; --muted:#5b6880; --paper:#f5f8fc; --ink:#172033; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo",sans-serif; color:var(--ink); background:var(--paper); }
+  header { background:var(--navy); color:#fff; padding:18px 28px; }
+  header h1 { margin:0 0 4px; font-size:20px; }
+  header p { margin:0; font-size:13px; color:#d8e5fb; }
+  main { max-width:960px; margin:24px auto; padding:0 20px 40px; }
+  table { width:100%; border-collapse:collapse; background:#fff; border:1px solid var(--line); border-radius:8px; overflow:hidden; }
+  th, td { padding:10px 12px; border-bottom:1px solid var(--line); text-align:left; font-size:14px; vertical-align:top; }
+  th { background:#edf4ff; color:var(--navy); font-size:13px; }
+  tr:last-child td { border-bottom:0; }
+  a { color:#155eaa; overflow-wrap:anywhere; }
+  .status { color:var(--muted); }
+  .empty { padding:20px; color:var(--muted); }
+  footer { max-width:960px; margin:0 auto; padding:0 20px 30px; color:var(--muted); font-size:12px; line-height:1.5; }
+</style>
+</head>
+<body>
+<header>
+  <h1>금융 뉴스 리포트</h1>
+  <p id="meta"></p>
+</header>
+<main>
+  <table id="report">
+    <thead>
+      <tr>
+        <th>제목</th>
+        <th>발행일</th>
+        <th>출처</th>
+        <th>설명 (제목 기반)</th>
+        <th>본문 확보 상태</th>
+        <th>관련 지표</th>
+      </tr>
+    </thead>
+    <tbody id="rows"></tbody>
+  </table>
+</main>
+<footer>출처 · 원문 전문 미포함 · 투자 판단 근거 아님</footer>
+<script>
+  const NEWS_ITEMS = [
+    { "title": "「통화신용정책보고서」(2026년 9월)", "url": "https://www.bok.or.kr/portal/bbs/P0000559/view.do?nttId=11064612&menuNo=200690", "published": "2026-09-10", "source": "한국은행" },
+    { "title": "통화정책방향(2026.8.27)", "url": "https://www.bok.or.kr/portal/bbs/P0000559/view.do?nttId=11064191&menuNo=200690", "published": "2026-08-27", "source": "한국은행" },
+    { "title": "[보도자료] 한국은행, 경남지역 집중호우 피해 중소기업 지원", "url": "https://www.bok.or.kr/portal/bbs/P0000559/view.do?nttId=11064057&menuNo=200690", "published": "2026-08-25", "source": "한국은행" },
+    { "title": "금융통화위원회 의사록(2026년 제14차)(2026.7.23)", "url": "https://www.bok.or.kr/portal/bbs/P0000559/view.do?nttId=11063631&menuNo=200690", "published": "2026-08-11", "source": "한국은행" },
+    { "title": "금융통화위원회 의사록(2026년 제13차)(2026.7.16)", "url": "https://www.bok.or.kr/portal/bbs/P0000559/view.do?nttId=11063511&menuNo=200690", "published": "2026-08-04", "source": "한국은행" },
+    { "title": "“당일 대출·무서류” 추석 급전을 노린 불법사금융입니다 - 명절 급전 수요를 노린 불법사금융 주의 - - 불법사금융 피해예방 수칙 및 원스톱 지원 이용방법 안내", "url": "https://www.fsc.go.kr/no010101/87702", "published": "2026-09-11", "source": "금융위원회" },
+    { "title": "IFRS17 체계下 계리가정 보고서 도입으로 보험부채 평가의 합리성과 신뢰성을 제고하겠습니다.", "url": "https://www.fsc.go.kr/no010101/87701", "published": "2026-09-11", "source": "금융위원회" },
+    { "title": "PF보증이 주택공급으로 이억원 금융위원장, 김포 PF사업장 방문", "url": "https://www.fsc.go.kr/no010101/87690", "published": "2026-09-10", "source": "금융위원회" },
+    { "title": "사업보고서 등에 대한 조사·감리결과 조치 - 제15차 금융위원회(’26.9.9.) 조치 의결", "url": "https://www.fsc.go.kr/no010101/87687", "published": "2026-09-09", "source": "금융위원회" },
+    { "title": "삼성증권㈜에 대한 단기금융업 인가", "url": "https://www.fsc.go.kr/no010101/87676", "published": "2026-09-09", "source": "금융위원회" },
+    { "title": "IFRS17 체계下 계리가정 보고서 도입으로 보험부채 평가의 합리성과 신뢰성을 제고하겠습니다", "url": "https://www.fss.or.kr/fss/bbs/B0000188/view.do?nttId=227769&menuNo=200218", "published": "2026-09-11", "source": "금융감독원 계리리스크감독국/보험감독국/보험상품분쟁2국" },
+    { "title": "2026년 2분기 자산운용회사 영업실적(잠정)", "url": "https://www.fss.or.kr/fss/bbs/B0000188/view.do?nttId=227746&menuNo=200218", "published": "2026-09-11", "source": "금융감독원 자산운용감독국" },
+    { "title": "금감원장, 금감원-지자체-금융권 공동개최 해외IR 참석 및 영국 금융감독당국 최고위급 등 면담", "url": "https://www.fss.or.kr/fss/bbs/B0000188/view.do?nttId=227683&menuNo=200218", "published": "2026-09-10", "source": "금융감독원 국제업무국(금융중심지지원센터)" },
+    { "title": "2026년 2분기 증권, 선물회사 영업실적", "url": "https://www.fss.or.kr/fss/bbs/B0000188/view.do?nttId=227674&menuNo=200218", "published": "2026-09-10", "source": "금융감독원 자본시장감독국" },
+    { "title": "사업보고서 등에 대한 조사, 감리결과 조치", "url": "https://www.fss.or.kr/fss/bbs/B0000188/view.do?nttId=227588&menuNo=200218", "published": "2026-09-09", "source": "금융감독원 회계감리2국" },
+    { "title": "[보도참고] 2026년 9월 최근 경제동향", "url": "https://mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId1=MOSFBBS_000000000028&searchNttId1=MOSF_000000000079323&menuNo=4010100", "published": "2026-09-11", "source": "재정경제부 경제분석과" },
+    { "title": "한-아프리카 경제협력, 우리 기업의 새로운 사업기회로 연계", "url": "https://mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId1=MOSFBBS_000000000028&searchNttId1=MOSF_000000000079309&menuNo=4010100", "published": "2026-09-10", "source": "재정경제부 국제기구과" },
+    { "title": "초혁신경제 위한 미래 산업 핵심 부품 육성, '27년 예산안으로 뒷받침한다", "url": "https://mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId1=MOSFBBS_000000000028&searchNttId1=MOSF_000000000079292&menuNo=4010100", "published": "2026-09-10", "source": "재정경제부 기획총괄과" },
+    { "title": "경제관계장관회의 겸 구조혁신 관계장관회의 개최", "url": "https://mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId1=MOSFBBS_000000000028&searchNttId1=MOSF_000000000079301&menuNo=4010100", "published": "2026-09-10", "source": "재정경제부 정책조정총괄과" },
+    { "title": "(보도설명) 추석기간 농축산물 할인지원을 조기종료 없이 안정적으로 운영할 예정입니다.", "url": "https://mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId1=MOSFBBS_000000000028&searchNttId1=MOSF_000000000079300&menuNo=4010100", "published": "2026-09-09", "source": "재정경제부 물가정책과" },
+    { "title": "경인사연·KDI 등 학계·연구기관도 2027년도 예산안 추진방향과 미래대응기금 필요성에 공감대 형성", "url": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156781376", "published": "2026-09-11", "source": "기획예산처" },
+    { "title": "[보도자료] 한마음한몸 자살예방 네트워크 포럼 참석", "url": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156781374", "published": "2026-09-11", "source": "국무조정실" },
+    { "title": "[보도자료] 2026 국가대테러종합훈련", "url": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156781373", "published": "2026-09-11", "source": "국무조정실" },
+    { "title": "정연두 외교전략정보본부장, 찻차이 방추윗(Chatchai Banchaud) 태국 NSC 사무총장 면담(9.10.)", "url": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156781375", "published": "2026-09-11", "source": "외교부" },
+    { "title": "제2026-14회 원자력안전위원회 개최", "url": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156781370", "published": "2026-09-11", "source": "원자력안전위원회" }
+  ];
+
+  function render(items){
+    document.querySelector('#meta').textContent = `데이터: news_items.json · 건수 ${items.length}건`;
+    if(!items.length){
+      document.querySelector('#report').replaceWith(Object.assign(document.createElement('p'), {className:'empty', textContent:'자료 없음'}));
+      return;
+    }
+    document.querySelector('#rows').innerHTML = items.map(item => `
+      <tr>
+        <td><a href="${item.url}" target="_blank" rel="noopener">${item.title}</a></td>
+        <td>${item.published || '미공개'}</td>
+        <td>${item.source}</td>
+        <td class="status">제목만 확보 — 요약 보류</td>
+        <td class="status">본문 미확보 (0건)</td>
+        <td class="status">M3에서 채움</td>
+      </tr>`).join('');
+  }
+  render(NEWS_ITEMS);
+</script>
+</body>
+</html>
